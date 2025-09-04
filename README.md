@@ -3,6 +3,10 @@
 ## Overview
 This repository scaffolds a production-style machine learning project to predict Premier League match outcomes. The project separates research (notebooks) from production (`src/`), and is designed to be config-driven, modular, and testable.
 
+![Dashboard Screenshot](README/PLMatchPredictorDash.png)
+
+The system predicts match outcome probabilities (home win, draw, away win) using rolling team statistics and Elo ratings, with a clean web interface for predictions and model calibration visualization.
+
 ## Setup
 1. Create and activate a virtual environment:
    ```bash
