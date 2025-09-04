@@ -44,6 +44,22 @@ configs/        # YAML configs for data paths and model params
   make dashboard
   ```
 
+### Data preparation
+```bash
+make ingest   # aggregates EO/*.csv -> data/raw/matches.csv
+make clean    # cleans -> data/processed/matches_clean.csv
+make features # builds rolling+Elo features and time-based splits
+```
+
+### API usage example
+```bash
+curl -X POST http://localhost:8000/predict \
+  -H 'Content-Type: application/json' \
+  -d '{"home_team":"Arsenal","away_team":"Chelsea","match_date":"2023-10-01"}'
+```
+
+If the API is not running, the Streamlit app falls back to local inference.
+
 ## Testing
 ```bash
 make test
