@@ -1,6 +1,13 @@
 data:
   raw_csv: data/raw/matches.csv
   cleaned_csv: data/processed/matches_clean.csv
+  dtypes:
+    Date: string
+    HomeTeam: string
+    AwayTeam: string
+    FTHG: int64
+    FTAG: int64
+    FTR: string
 
 features:
   windows: [3, 5, 10]
