@@ -13,6 +13,7 @@ help:
 	@echo "  train      - Train model"
 	@echo "  eval       - Evaluate model"
 	@echo "  predict    - Run a sample prediction"
+	@echo "  ingest     - Aggregate EO CSVs into data/raw/matches.csv"
 	@echo "  api        - Run FastAPI server"
 	@echo "  dashboard  - Run Streamlit dashboard"
 	@echo "  test       - Run tests"
@@ -37,6 +38,9 @@ eval:
 
 predict:
 	$(ACTIVATE) && $(PYTHON) -m src.serve.cli --config configs/runtime.yaml
+
+ingest:
+	$(ACTIVATE) && $(PYTHON) -m src.ingest.aggregate_eo_csvs --eo_dir EO --out_csv data/raw/matches.csv
 
 api:
 	$(ACTIVATE) && uvicorn src.serve.api:app --reload --host 0.0.0.0 --port 8000
