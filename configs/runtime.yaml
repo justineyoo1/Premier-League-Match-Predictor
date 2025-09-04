@@ -1,0 +1,14 @@
+data:
+  raw_csv: data/raw/matches.csv
+  cleaned_csv: data/processed/matches_clean.csv
+
+features:
+  windows: [3, 5, 10]
+  elo:
+    k_factor: 20
+    base_rating: 1500
+
+model:
+  artifact_path: artifacts/model.pkl
+
+
